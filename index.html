@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Identification</title>
+    <style>
+        /* Add your CSS styles here */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <center><h1>Customer Identification</h1></center>
+    <form id="customerForm" onsubmit="return validateForm()">
+        <label for="customerId">Customer ID *:</label>
+        <input type="text" id="customerId"  required>
+        <input type="checkbox" id="generateIdCheckbox" onchange="toggleCustomerIdInput()">
+        <label for="generateIdCheckbox">Generate ID</label>
+        <br>
+        <br>
+        <label for="firstName">First Name *:</label>
+        <input type="text" id="firstName" required minlength="2" title="Mandatory" onfocus="highlightInput(this)"
+            onblur="removeHighlight(this)" onfocusout="toUpperCase(this)">
+
+        <label for="lastName">Last Name *:</label>
+        <input type="text" id="lastName" required minlength="2" onfocus="highlightInput(this)"
+            onblur="removeHighlight(this)" onfocusout="toUpperCase(this)">
+            
+        <label for="dob">Date of Birth *:</label>
+        <input type="date" id="dob" required>
+        <br>
+        <br>
+
+        <label for="customerId">Gender *:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <br>
+        <br>
+
+        <label for="email">Email Address *:</label>
+        <input type="email" id="email" required onfocus="highlightInput(this)" onblur="removeHighlight(this)"
+            onfocusout="toUpperCase(this)">
+            
+        <label for="phone">Phone Number *:</label>
+        <input type="tel" id="phone" required onfocus="highlightInput(this)" onblur="removeHighlight(this)"
+            onfocusout="toUpperCase(this)">
+
+        <label for="password">Password *:</label>
+        <input type="password" id="password" required minlength="12" title="Mandatory" onfocus="highlightInput(this)"
+            onblur="removeHighlight(this)">
+        <label><input type="checkbox" id="newsletter" checked> Subscribe to Newsletter</label>
+        <br>
+        <br>
+
+        <label for="remarks">Remarks/Comments   :</label>
+        <textarea id="remarks" onfocus="highlightInput(this)" onblur="removeHighlight(this)"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
